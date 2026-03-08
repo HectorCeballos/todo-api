@@ -1,5 +1,6 @@
 const express = require('express');
 const tasksRouter = require('./routes/tasks');
+const errorHandler = require('./middleware/errorHandler');
 
 const app = express();
 
@@ -13,5 +14,8 @@ app.use('/tasks', tasksRouter);
 app.get('/', (req, res) => {
   res.json({ message: 'Todo API is running' });
 });
+
+// Error Handler - must be last
+app.use(errorHandler);
 
 module.exports = app;
