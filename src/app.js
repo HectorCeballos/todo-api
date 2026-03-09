@@ -4,7 +4,7 @@ const errorHandler = require('./middleware/errorHandler');
 
 const app = express();
 
-// Middleware
+// Middlewarenp
 app.use(express.json());
 
 // Routes
