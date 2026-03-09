@@ -1,13 +1,15 @@
 const express = require('express');
 const tasksRouter = require('./routes/tasks');
+const authRouter = require('./routes/auth');
 const errorHandler = require('./middleware/errorHandler');
 
 const app = express();
 
-// Middlewarenp
+// Middleware
 app.use(express.json());
 
 // Routes
+app.use('/auth', authRouter);
 app.use('/tasks', tasksRouter);
 
 // Root
