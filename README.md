@@ -262,7 +262,6 @@ npm run seed
 - npm 9+
 
 ### Installation
-
 ```bash
 # Clone the repository
 git clone https://github.com/HectorCeballos/todo-api.git
@@ -270,12 +269,17 @@ cd todo-api
 
 # Install dependencies
 npm install
+```
 
-# Create environment file
-echo "PORT=3000" > .env
-echo "JWT_SECRET=your_secret_key_here" >> .env
+Then create a `.env` file manually in the root of the project and add these two lines:
+```
+PORT=3000
+JWT_SECRET=your_secret_key_here
+```
 
-# Seed the database (optional)
+Replace `your_secret_key_here` with any long random string of your choice. Keep it secret and never share it — it is used to sign and verify authentication tokens. If it changes, all existing tokens will become invalid and users will be logged out.
+```bash
+# Seed the database with sample tasks (optional)
 npm run seed
 
 # Start the development server
