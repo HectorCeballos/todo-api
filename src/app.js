@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const tasksRouter = require('./routes/tasks');
 const authRouter = require('./routes/auth');
 const errorHandler = require('./middleware/errorHandler');
@@ -6,6 +7,7 @@ const errorHandler = require('./middleware/errorHandler');
 const app = express();
 
 // Middleware
+app.use(cors());
 app.use(express.json());
 
 // Routes
